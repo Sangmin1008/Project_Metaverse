@@ -66,16 +66,6 @@ public class PlayerController : BaseController
                 weaponHandler = null;
             }
 
-            if (WeaponPrefab != null)
-            {
-                WeaponPrefab = null;
-            }
-            
-            foreach (Transform child in weaponPivot)
-            {
-                Destroy(child);
-            }
-
             Debug.Log("무기 생성");
             weaponHandler = Instantiate(newWeaponPrefab, weaponPivot);
             WeaponPrefab = newWeaponPrefab;

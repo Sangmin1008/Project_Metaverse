@@ -50,7 +50,11 @@ public class GameManager : MonoBehaviour
         EnemyManager.Init(this);
 
         bestScore = PlayerPrefs.GetInt(BestScoreKey, 0);
-        if (_hasGoldenSword) Player.ChangeWeapon();
+    }
+
+    private void Start()
+    {
+        if (_hasGoldenSword) Player?.ChangeWeapon();
     }
 
     public void StartGame()
